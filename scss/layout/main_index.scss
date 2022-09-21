@@ -1,0 +1,17 @@
+.main_index{
+    height: 550px;
+    div{
+        width: 100%;
+    }
+    img{
+        margin: 50px;
+    }
+}
+
+@media screen and (max-width: 1000px){
+    .img{
+        flex-direction: column;
+    }
+}
+
+

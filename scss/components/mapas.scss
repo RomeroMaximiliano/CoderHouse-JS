@@ -1,0 +1,37 @@
+
+$responsive_input: (
+    width : 0px,
+    height: 40px,
+    padding: 0 20px,
+    font-size: 18px,
+    color: #015958,
+    outline: none,
+    border-radius: 30px,
+    transition: all 0.6s ease,
+);
+
+$responsive_btn: (
+    position: relative,
+    right: 49px,
+    bottom: 2px,
+    width: 45px,
+    height: 45px,
+    line-height: 45px,
+    text-align: center,
+    background-color: #015958,
+    color: white,
+    border-radius: 50%,
+    padding: 0px,
+    );
+
+$searchbar_input: (
+    width: 60%,
+    height: 42px,
+    background: #0CABA8,
+    color: white,
+    font-style: normal,
+    font-weight: 400,
+    font-size: 20px,
+    line-height: 28px,
+    border-radius: 5px,
+)

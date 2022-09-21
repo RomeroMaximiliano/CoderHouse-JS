@@ -1,0 +1,116 @@
+@import"../components/extend";
+@import"../components/mapas";
+@import"../components/mixing";
+@import"../components/variables";
+
+nav {
+    background: $gradient;
+
+    .btn-primary{
+        border: none;
+        background-color: transparent;
+    }
+
+    .btn-primary:hover{
+    background-color: transparent;
+    }
+    
+    img{
+        width: 60px;
+    
+    }
+    .header {height: 75px;
+        }
+
+    }
+    .nav{
+        height: 65px;
+    
+    }
+
+    .input_responsive input{
+        width:map-get($responsive_input, width ) ;
+        height:map-get($responsive_input, height ) ;
+        padding:map-get($responsive_input, padding ) ;
+        font-size:map-get($responsive_input, font-size ) ;
+        color:map-get($responsive_input, color ) ;
+        outline:map-get($responsive_input, outline ) ;
+        border-radius:map-get($responsive_input, border-radius ) ;
+        transition:map-get($responsive_input, transition ) ;
+    
+    }
+    .input_responsive .btn{
+        position: map-get($responsive_btn, position );
+        right:map-get($responsive_btn, right ) ;
+        bottom:map-get($responsive_btn, bottom ) ;
+        width:map-get($responsive_btn, width ) ;
+        height:map-get($responsive_btn, height ) ;
+        line-height:map-get($responsive_btn, line-height ) ;
+        text-align:map-get($responsive_btn, text-align ) ;
+        background-color:map-get($responsive_btn, background-color ) ;
+        color:map-get($responsive_btn, color ) ;
+        border-radius:map-get($responsive_btn, border-radius ) ;
+        padding:map-get($responsive_btn, padding ) ;
+
+    
+    }
+    .nav{
+        display: none;
+    
+    }
+    
+    .input_responsive:hover input{
+        width: 240px;
+    
+    }
+    
+    .nav_redirects i{
+        margin-right: 20px;
+        color: white;
+    
+    }
+    
+    .redirects a{
+        color: white;
+        text-decoration: none;
+    
+    }
+    
+    .SearchBar input{
+        width:map-get($searchbar_input, width ) ;
+        height:map-get($searchbar_input, height ) ;
+        background:map-get($searchbar_input, background ) ;
+        color:black;
+        font-style:map-get($searchbar_input, font-style ) ;
+        font-weight:map-get($searchbar_input, font-weight ) ;
+        font-size: 25px ;
+        line-height:map-get($searchbar_input, line-height ) ;
+        border-radius:map-get($searchbar_input, border-radius ) ;
+    
+    }
+    .nav a{
+        text-decoration: none;
+        color: black;
+        font-size: 20px;
+    
+    }
+    
+    .List li{
+        list-style-type: none;
+        text-shadow: 0px 4px 4px rgba(0, 0, 0, 1);
+    
+        a{
+            text-decoration: none;
+            font-weight: 400;
+            font-size: 25px;
+            color: white;
+            margin: 20px;
+        
+        }
+    }
+
+.nav .sidebar-item:hover{
+    background-color:#024242;
+    border-radius: 5px;
+}
+

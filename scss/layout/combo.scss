@@ -1,0 +1,66 @@
+@import "../components/variables";
+@import "../components/extend.scss";
+@import "../components/mapas.scss";
+@import "../components/mixing.scss";
+@import "../components/reset.scss";
+
+body{
+    background-color: $main;
+}
+
+.main_product{
+    border: 2px solid black;
+    border-radius: 5px;
+    margin: 50px 20px;
+    background: #D0D0D0;
+    align-items: center;
+}
+
+.cuenta{
+    width: 80%;
+    height: 150px;
+    background-color:rgb(186, 185, 185);
+    border: 1px solid black;
+    border-radius: 5px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    b{
+        color: #800020;
+        display: flex;
+    }
+    p{
+        color: #800020;
+    }
+}
+
+.lista_combo{
+    background-color:rgb(186, 185, 185);
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+
+.img{
+    width: 70%;
+    align-items: center;
+}
+
+
+
+@media screen and (max-width:992px) {
+    main{
+        flex-direction: column;
+        align-items: center;
+        .main-combo{
+            width: 99%;
+            order: 2;
+        }
+        
+    }
+    img{
+            order: 1;
+    }
+    
+}

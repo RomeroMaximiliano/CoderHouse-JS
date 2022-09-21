@@ -1,0 +1,46 @@
+@import "../components/variables";
+
+footer {
+    background-color: $footer;
+    i {
+        color: $primariooscuro;
+    
+    }
+    p{
+        margin: 0;
+        padding: 2px;
+    
+    }
+    .Cont_Footer{
+        width: 50%;
+        border-bottom: 2px solid $primariooscuro;
+        padding: 10px 0px;
+
+        a{
+            text-decoration: none;
+        
+        }
+        i{
+            border-bottom: none;
+        
+        }
+
+    }
+    .Copy{
+        color: white;
+        bottom: 5px;
+    
+    }
+    .Cont_Footer--I{
+        border-bottom: none;
+    }
+    @media screen and (min-width:768px) {
+        .Cont_Footer {
+        width: none;
+        border-bottom: none;
+        padding: 50px;
+        height: 290px;
+    
+        }
+    }
+}
