@@ -297,7 +297,7 @@ arrayProceAMD.forEach((ProceAMD)=>{
     amdproce.innerHTML =`
     <div class="tarjeta d-flex">
         <div class="card_image">
-        <img src="../img/proceamd/${ProceAMD.img}" alt=""></img>
+        <img src="./img/proceamd/${ProceAMD.img}" alt=""></img>
         </div>
         <div class="card_content">
             <h5>${ProceAMD.nombre}</h5>
@@ -309,12 +309,7 @@ arrayProceAMD.forEach((ProceAMD)=>{
 })
 }
 
-let comprastep1 = document.getElementsByClassName("comprastep1amd")
 
-function step1 (){
-    
-}
-comprastep1.addEventListener("click")
 
 
 function seeamdmother(){
@@ -326,7 +321,7 @@ arrayMotherAMD.forEach((MotherAMD)=>{
     amdmother.innerHTML =`
     <div class="tarjeta d-flex">
         <div class="card_image">
-        <img src="../img/motheramd/${MotherAMD.img}" alt=""></img>
+        <img src="./img/motheramd/${MotherAMD.img}" alt=""></img>
         </div>
         <div class="card_content">
             <h5>${MotherAMD.nombre}</h5>
@@ -349,7 +344,7 @@ arrayProceIntel.forEach((ProceIntel)=>{
     intelproce.innerHTML =`
         <div class="tarjeta d-flex">
             <div class="card_image">
-            <img src="../img/proceintel/${ProceIntel.img}" alt=""></img>
+            <img src="./img/proceintel/${ProceIntel.img}" alt=""></img>
             </div>
             <div class="card_content">
                 <h5>${ProceIntel.nombre}</h5>
@@ -370,7 +365,7 @@ arrayMotherIntel.forEach((MotherIntel)=>{
     intelmother.innerHTML =`
     <div class="tarjeta d-flex">
         <div class="card_image">
-        <img src="../img/motherintel/${MotherIntel.img}" alt=""></img>
+        <img src="./img/motherintel/${MotherIntel.img}" alt=""></img>
         </div>
         <div class="card_content">
             <h5>${MotherIntel.nombre}</h5>
@@ -391,7 +386,7 @@ arrayRAMS.forEach((RAM)=>{
     ram.innerHTML =`
     <div class="tarjeta d-flex">
         <div class="card_image">
-        <img src="../img/rams/${RAM.img}" alt=""></img>
+        <img src="./img/rams/${RAM.img}" alt=""></img>
         </div>
         <div class="card_content">
             <h5>${RAM.nombre}</h5>
@@ -412,7 +407,7 @@ arrayVideocard.forEach((Videocard)=>{
     videocard.innerHTML =`
     <div class="tarjeta d-flex">
         <div class="card_image">
-        <img src="../img/videocards/${Videocard.img}" alt=""></img>
+        <img src="./img/videocards/${Videocard.img}" alt=""></img>
         </div>
         <div class="card_content">
             <h5>${Videocard.nombre}</h5>
@@ -433,7 +428,7 @@ arrayDisk.forEach((Disk)=>{
     disk.innerHTML =`
     <div class="tarjeta d-flex">
         <div class="card_image">
-        <img src="../img/disk/${Disk.img}" alt=""></img>
+        <img src="./img/disk/${Disk.img}" alt=""></img>
         </div>
         <div class="card_content">
             <h5>${Disk.nombre}</h5>
@@ -455,7 +450,7 @@ arrayCabinet.forEach((Cabinet)=>{
     cabinet.innerHTML =`
     <div class="tarjeta d-flex">
         <div class="card_image">
-        <img src="../img/cabinet/${Cabinet.img}" alt=""></img>
+        <img src="./img/cabinet/${Cabinet.img}" alt=""></img>
         </div>
         <div class="card_content">
             <h5>${Cabinet.nombre}</h5>
@@ -476,7 +471,7 @@ arrayFountain.forEach((Fountain)=>{
     fountain.innerHTML =`
     <div class="tarjeta d-flex">
         <div class="card_image">
-        <img src="../img/fountain/${Fountain.img}" alt=""></img>
+        <img src="./img/fountain/${Fountain.img}" alt=""></img>
         </div>
         <div class="card_content">
             <h5>${Fountain.nombre}</h5>
@@ -497,7 +492,7 @@ arrayMonitor.forEach((Monitor)=>{
     monitor.innerHTML =`
     <div class="tarjeta d-flex">
         <div class="card_image">
-        <img src="../img/monitor/${Monitor.img}" alt=""></img>
+        <img src="./img/monitor/${Monitor.img}" alt=""></img>
         </div>
         <div class="card_content">
             <h5>${Monitor.nombre}</h5>
@@ -518,7 +513,7 @@ arrayMouse.forEach((Mouse)=>{
     mouse.innerHTML =`
     <div class="tarjeta d-flex">
         <div class="card_image">
-        <img src="../img/mouse/${Mouse.img}" alt=""></img>
+        <img src="./img/mouse/${Mouse.img}" alt=""></img>
         </div>
         <div class="card_content">
             <h5>${Mouse.nombre}</h5>
@@ -539,7 +534,7 @@ arrayKeyboard.forEach((Keyboard)=>{
     keyboard.innerHTML =`
     <div class="tarjeta d-flex">
         <div class="card_image">
-        <img src="../img/keyboard/${Keyboard.img}" alt=""></img>
+        <img src="./img/keyboard/${Keyboard.img}" alt=""></img>
         </div>
         <div class="card_content">
             <h5>${Keyboard.nombre}</h5>
