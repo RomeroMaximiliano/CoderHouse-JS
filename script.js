@@ -302,13 +302,23 @@ arrayProceAMD.forEach((ProceAMD)=>{
         <div class="card_content">
             <h5>${ProceAMD.nombre}</h5>
             <p>${ProceAMD.precio}</p>
-            <button class="comprastep1amd">Comprar</button>
+            <button id="${ProceAMD.id}">Comprar</button>
         </div>
     </div>`
     product.append(amdproce)
+    
+    function compraamd (){
+    document.getElementById("step1").innerHTML=`${ProceAMD.nombre}`;
+    document.getElementById("total").innerHTML=total + `${ProceAMD.precio}`;
+    seeamdmother()
+    }
+
+    let comprastepamd = document.getElementById(`${ProceAMD.id}`)
+
+    comprastepamd.addEventListener("click", compraamd)
+
 })
 }
-
 
 
 
@@ -326,10 +336,20 @@ arrayMotherAMD.forEach((MotherAMD)=>{
         <div class="card_content">
             <h5>${MotherAMD.nombre}</h5>
             <p>${MotherAMD.precio}</p>
-            <button class="comprastep2intel">Comprar</button>
+            <button id="${MotherAMD.id}">Comprar</button>
         </div>
     </div>`
     product.append(amdmother)
+
+    function compramotheramd (){
+        document.getElementById("step2").innerHTML=`${MotherAMD.nombre}`;
+        document.getElementById("total").innerHTML=total + `${MotherAMD.precio}`;
+        seeram()
+        }
+    
+        let comprastepmotheramd = document.getElementById(`${MotherAMD.id}`)
+    
+        comprastepmotheramd.addEventListener("click", compramotheramd)
 })
 }
 
@@ -349,10 +369,20 @@ arrayProceIntel.forEach((ProceIntel)=>{
             <div class="card_content">
                 <h5>${ProceIntel.nombre}</h5>
                 <p>${ProceIntel.precio}</p>
-                <button class="comprastep1">Comprar</button>
-            </div>
-        </div>`
+                <button id="${ProceIntel.id}">Comprar</button>
+                </div>
+            </div>`
     product.append(intelproce)
+
+    function compraintel(){
+        document.getElementById("step1").innerHTML=`${ProceIntel.nombre}`;
+        document.getElementById("total").innerHTML=`${ProceIntel.precio}`;
+        seeintelmother()
+    }
+
+    let comprastepintel = document.getElementById(`${ProceIntel.id}`)
+
+    comprastepintel.addEventListener("click",compraintel)
 })
 }
 
@@ -370,10 +400,20 @@ arrayMotherIntel.forEach((MotherIntel)=>{
         <div class="card_content">
             <h5>${MotherIntel.nombre}</h5>
             <p>${MotherIntel.precio}</p>
-            <button class="comprastep2">Comprar</button>
+            <button id="${MotherIntel.id}">Comprar</button>
         </div>
     </div>`
     product.append(intelmother)
+
+    function compramotherintel(){
+        document.getElementById("step2").innerHTML=`${MotherIntel.nombre}`;
+        document.getElementById("total").innerHTML=`${MotherIntel.precio}`;
+        seeram()
+    }
+
+    let comprastepmotherintel = document.getElementById(`${MotherIntel.id}`)
+
+    comprastepmotherintel.addEventListener("click",compramotherintel)
 })
 }
 
@@ -391,10 +431,20 @@ arrayRAMS.forEach((RAM)=>{
         <div class="card_content">
             <h5>${RAM.nombre}</h5>
             <p>${RAM.precio}</p>
-            <button class="comprastep3">Comprar</button>
+            <button id="${RAM.id}">Comprar</button>
         </div>
     </div>`
     product.append(ram)
+
+    function compraram(){
+        document.getElementById("step3").innerHTML=`${RAM.nombre}`;
+        document.getElementById("total").innerHTML=`${RAM.precio}`;
+        seevideocard()
+    }
+
+    let comprastepram = document.getElementById(`${RAM.id}`)
+
+    comprastepram.addEventListener("click",compraram)
 })
 }
 
@@ -412,10 +462,20 @@ arrayVideocard.forEach((Videocard)=>{
         <div class="card_content">
             <h5>${Videocard.nombre}</h5>
             <p>${Videocard.precio}</p>
-            <button class="comprastep4">Comprar</button>
+            <button id="${Videocard.id}">Comprar</button>
         </div>
     </div>`
     product.append(videocard)
+
+    function compravideocard(){
+        document.getElementById("step4").innerHTML=`${Videocard.nombre}`;
+        document.getElementById("total").innerHTML=`${Videocard.precio}`;
+        seedisk()
+    }
+
+    let comprastepvideocard = document.getElementById(`${Videocard.id}`)
+
+    comprastepvideocard.addEventListener("click",compravideocard)
 })
 }
 
@@ -433,10 +493,20 @@ arrayDisk.forEach((Disk)=>{
         <div class="card_content">
             <h5>${Disk.nombre}</h5>
             <p>${Disk.precio}</p>
-            <button class="comprastep5">Comprar</button>
+            <button id="${Disk.id}">Comprar</button>
         </div>
     </div>`
     product.append(disk)
+
+    function compradisk(){
+        document.getElementById("step5").innerHTML=`${Disk.nombre}`;
+        document.getElementById("total").innerHTML=`${Disk.precio}`;
+        seecabinet()
+    }
+
+    let comprastepdisk = document.getElementById(`${Disk.id}`)
+
+    comprastepdisk.addEventListener("click",compradisk)
 })
 }
 
@@ -455,10 +525,20 @@ arrayCabinet.forEach((Cabinet)=>{
         <div class="card_content">
             <h5>${Cabinet.nombre}</h5>
             <p>${Cabinet.precio}</p>
-            <button class="comprastep6">Comprar</button>
+            <button id="${Cabinet.id}">Comprar</button>
         </div>
     </div>`
     product.append(cabinet)
+
+    function compracabinet(){
+        document.getElementById("step6").innerHTML=`${Cabinet.nombre}`;
+        document.getElementById("total").innerHTML=`${Cabinet.precio}`;
+        seefountain()
+    }
+
+    let comprastepcabinet = document.getElementById(`${Cabinet.id}`)
+
+    comprastepcabinet.addEventListener("click",compracabinet)
 })
 }
 
@@ -476,10 +556,20 @@ arrayFountain.forEach((Fountain)=>{
         <div class="card_content">
             <h5>${Fountain.nombre}</h5>
             <p>${Fountain.precio}</p>
-            <button class="comprastep7">Comprar</button>
+            <button id="${Fountain.id}">Comprar</button>
         </div>
     </div>`
     product.append(fountain)
+
+    function comprafountain(){
+        document.getElementById("step7").innerHTML=`${Fountain.nombre}`;
+        document.getElementById("total").innerHTML=`${Fountain.precio}`;
+        seemonitor()
+    }
+
+    let comprastepfountain = document.getElementById(`${Fountain.id}`)
+
+    comprastepfountain.addEventListener("click",comprafountain)
 })
 }
 
@@ -497,10 +587,20 @@ arrayMonitor.forEach((Monitor)=>{
         <div class="card_content">
             <h5>${Monitor.nombre}</h5>
             <p>${Monitor.precio}</p>
-            <button class="comprastep8">Comprar</button>
+            <button id="${Monitor.id}">Comprar</button>
         </div>
     </div>`
     product.append(monitor)
+
+    function compramonitor(){
+        document.getElementById("step8").innerHTML=`${Monitor.nombre}`;
+        document.getElementById("total").innerHTML=`${Monitor.precio}`;
+        seemouse()
+    }
+
+    let comprastepmonitor = document.getElementById(`${Monitor.id}`)
+
+    comprastepmonitor.addEventListener("click",compramonitor)
 })
 }
 
@@ -518,10 +618,20 @@ arrayMouse.forEach((Mouse)=>{
         <div class="card_content">
             <h5>${Mouse.nombre}</h5>
             <p>${Mouse.precio}</p>
-            <button class="comprastep9">Comprar</button>
+            <button id="${Mouse.id}">Comprar</button>
         </div>
     </div>`
     product.append(mouse)
+
+    function compramouse(){
+        document.getElementById("step9").innerHTML=`${Mouse.nombre}`;
+        document.getElementById("total").innerHTML=`${Mouse.precio}`;
+        seekeyboard()
+    }
+
+    let comprastepmouse = document.getElementById(`${Mouse.id}`)
+
+    comprastepmouse.addEventListener("click",compramouse)
 })
 }
 
@@ -539,10 +649,20 @@ arrayKeyboard.forEach((Keyboard)=>{
         <div class="card_content">
             <h5>${Keyboard.nombre}</h5>
             <p>${Keyboard.precio}</p>
-            <button class="comprastep10">Comprar</button>
+            <button id="${Keyboard.id}">Comprar</button>
         </div>
     </div>`
     product.append(keyboard)
+
+    function comprakeyboard(){
+        document.getElementById("step10").innerHTML=`${Keyboard.nombre}`;
+        document.getElementById("total").innerHTML=`${Keyboard.precio}`;
+        seekeyboard()
+    }
+
+    let comprastepkeyboard = document.getElementById(`${Keyboard.id}`)
+
+    comprastepkeyboard.addEventListener("click",comprakeyboard)
 })
 }
 
