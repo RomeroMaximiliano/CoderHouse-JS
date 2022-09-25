@@ -1,5 +1,9 @@
 //Objets and Array's
-
+const Format = (number) => {
+    const exp = /(\d)(?=(\d{3})+(?!\d))/g;
+    const rep = '$1,';
+    return number.toString().replace(exp,rep);
+}
 //Procesadores AMD 
 
 function ProceAMD (id , nombre , precio , img){
@@ -51,7 +55,7 @@ function ProceIntel (id, nombre, precio , img){
     this.img = img
 }
 
-const IntelG5900 = new ProceIntel ( 17 , "Micro Intel Celeron G5900 " , 8338 ,`intelg5900.jpg`)
+const IntelG5900 = new ProceIntel ( 17 , "Micro Intel Celeron G5900 " , 10338 ,`intelg5900.jpg`)
 const IntelG6900 = new ProceIntel ( 18 , "Micro Intel Celeron G6900 AlderLake" , 12524 ,`intelg6900.jpg`)
 const IntelG6400 = new ProceIntel ( 19 , "Micro Intel Pentium G6400 4.0Ghz" , 13029 ,`intelg6400.jpg`)
 const IntelI310F = new ProceIntel ( 20 , "Micro Intel I3-10100F 4.3Ghz" , 16779 ,`intelg7400.jpg`)
@@ -276,7 +280,9 @@ let intel = document.getElementById("intel")
 
 let total = document.getElementById("total")
 
-total = 0.0
+total = 0
+
+cuotaTotal = 0
 
 function clean() {
     product = document.getElementById("product")
@@ -311,8 +317,10 @@ arrayProceAMD.forEach((ProceAMD)=>{
     
     function compraamd (){
     document.getElementById("step1").innerHTML=`${ProceAMD.nombre}`;
-    document.getElementById("total").innerHTML= total =  total + parseFloat(`${ProceAMD.precio}`);
-    document.getElementById("total_cuota").innerHTML = parseFloat( total / 12 ).toFixed(3)
+    total = total + parseFloat(`${ProceAMD.precio}`)
+    document.getElementById("total").innerHTML= total.toLocaleString("es-ES");  
+    cuotaTotal = total / 12
+    document.getElementById("total_cuota").innerHTML = cuotaTotal.toLocaleString("es-ES")
     seeamdmother()
     }
 
@@ -346,8 +354,10 @@ arrayMotherAMD.forEach((MotherAMD)=>{
 
     function compramotheramd (){
         document.getElementById("step2").innerHTML=`${MotherAMD.nombre}`;
-        document.getElementById("total").innerHTML= total = total + parseFloat(`${MotherAMD.precio}`);
-        document.getElementById("total_cuota").innerHTML = parseFloat( total / 12 ).toFixed(3)
+        total = total + parseFloat(`${MotherAMD.precio}`)
+        document.getElementById("total").innerHTML= total.toLocaleString("es-ES");  
+        cuotaTotal = total / 12
+        document.getElementById("total_cuota").innerHTML = cuotaTotal.toLocaleString("es-ES")
         seeram()
         }
     
@@ -380,8 +390,10 @@ arrayProceIntel.forEach((ProceIntel)=>{
 
     function compraintel(){
         document.getElementById("step1").innerHTML=`${ProceIntel.nombre}`;
-        document.getElementById("total").innerHTML= total = total + parseFloat(`${ProceIntel.precio}`);
-        document.getElementById("total_cuota").innerHTML = parseFloat( total / 12 ).toFixed(3)
+        total = total + parseFloat(`${ProceIntel.precio}`)
+        document.getElementById("total").innerHTML= total.toLocaleString("es-ES");  
+        cuotaTotal = total / 12
+        document.getElementById("total_cuota").innerHTML = cuotaTotal.toLocaleString("es-ES")
         seeintelmother()
     }
 
@@ -412,8 +424,10 @@ arrayMotherIntel.forEach((MotherIntel)=>{
 
     function compramotherintel(){
         document.getElementById("step2").innerHTML=`${MotherIntel.nombre}`;
-        document.getElementById("total").innerHTML= total = total + parseFloat(`${MotherIntel.precio}`);
-        document.getElementById("total_cuota").innerHTML = parseFloat( total / 12 ).toFixed(3)
+        total = total + parseFloat(`${MotherIntel.precio}`)
+        document.getElementById("total").innerHTML= total.toLocaleString("es-ES");  
+        cuotaTotal = total / 12
+        document.getElementById("total_cuota").innerHTML = cuotaTotal.toLocaleString("es-ES")
         seeram()
     }
 
@@ -444,8 +458,10 @@ arrayRAMS.forEach((RAM)=>{
 
     function compraram(){
         document.getElementById("step3").innerHTML=`${RAM.nombre}`;
-        document.getElementById("total").innerHTML= total = total + parseFloat(`${RAM.precio}`);
-        document.getElementById("total_cuota").innerHTML = parseFloat( total / 12 ).toFixed(3)
+        total = total + parseFloat(`${RAM.precio}`)
+        document.getElementById("total").innerHTML= total.toLocaleString("es-ES");  
+        cuotaTotal = total / 12
+        document.getElementById("total_cuota").innerHTML = cuotaTotal.toLocaleString("es-ES")
         seevideocard()
     }
 
@@ -476,8 +492,10 @@ arrayVideocard.forEach((Videocard)=>{
 
     function compravideocard(){
         document.getElementById("step4").innerHTML=`${Videocard.nombre}`;
-        document.getElementById("total").innerHTML= total = total + parseFloat(`${Videocard.precio}`);
-        document.getElementById("total_cuota").innerHTML = parseFloat( total / 12 ).toFixed(3)
+        total = total + parseFloat(`${Videocard.precio}`)
+        document.getElementById("total").innerHTML= total.toLocaleString("es-ES");  
+        cuotaTotal = total / 12
+        document.getElementById("total_cuota").innerHTML = cuotaTotal.toLocaleString("es-ES")
         seedisk()
     }
 
@@ -508,8 +526,10 @@ arrayDisk.forEach((Disk)=>{
 
     function compradisk(){
         document.getElementById("step5").innerHTML=`${Disk.nombre}`;
-        document.getElementById("total").innerHTML= total = total + parseFloat(`${Disk.precio}`);
-        document.getElementById("total_cuota").innerHTML = parseFloat( total / 12 ).toFixed(3)
+        total = total + parseFloat(`${Disk.precio}`)
+        document.getElementById("total").innerHTML= total.toLocaleString("es-ES");  
+        cuotaTotal = total / 12
+        document.getElementById("total_cuota").innerHTML = cuotaTotal.toLocaleString("es-ES")
         seecabinet()
     }
 
@@ -541,8 +561,10 @@ arrayCabinet.forEach((Cabinet)=>{
 
     function compracabinet(){
         document.getElementById("step6").innerHTML=`${Cabinet.nombre}`;
-        document.getElementById("total").innerHTML= total = total + parseFloat(`${Cabinet.precio}`);
-        document.getElementById("total_cuota").innerHTML = parseFloat( total / 12 ).toFixed(3)
+        total = total + parseFloat(`${Cabinet.precio}`)
+        document.getElementById("total").innerHTML= total.toLocaleString("es-ES");  
+        cuotaTotal = total / 12
+        document.getElementById("total_cuota").innerHTML = cuotaTotal.toLocaleString("es-ES")
         seefountain()
     }
 
@@ -573,8 +595,10 @@ arrayFountain.forEach((Fountain)=>{
 
     function comprafountain(){
         document.getElementById("step7").innerHTML=`${Fountain.nombre}`;
-        document.getElementById("total").innerHTML= total = total + parseFloat(`${Fountain.precio}`);
-        document.getElementById("total_cuota").innerHTML = parseFloat( total / 12 ).toFixed(3)
+        total = total + parseFloat(`${Fountain.precio}`)
+        document.getElementById("total").innerHTML= total.toLocaleString("es-ES");  
+        cuotaTotal = total / 12
+        document.getElementById("total_cuota").innerHTML = cuotaTotal.toLocaleString("es-ES")
         seemonitor()
     }
 
@@ -605,8 +629,10 @@ arrayMonitor.forEach((Monitor)=>{
 
     function compramonitor(){
         document.getElementById("step8").innerHTML=`${Monitor.nombre}`;
-        document.getElementById("total").innerHTML= total = total + parseFloat(`${Monitor.precio}`);
-        document.getElementById("total_cuota").innerHTML = parseFloat( total / 12 ).toFixed(3)
+        total = total + parseFloat(`${Monitor.precio}`)
+        document.getElementById("total").innerHTML= total.toLocaleString("es-ES");  
+        cuotaTotal = total / 12
+        document.getElementById("total_cuota").innerHTML = cuotaTotal.toLocaleString("es-ES")
         seemouse()
     }
 
@@ -637,8 +663,10 @@ arrayMouse.forEach((Mouse)=>{
 
     function compramouse(){
         document.getElementById("step9").innerHTML=`${Mouse.nombre}`;
-        document.getElementById("total").innerHTML= total = total + parseFloat(`${Mouse.precio}`);
-        document.getElementById("total_cuota").innerHTML = parseFloat( total / 12 ).toFixed(3)
+        total = total + parseFloat(`${Mouse.precio}`)
+        document.getElementById("total").innerHTML= total.toLocaleString("es-ES");  
+        cuotaTotal = total / 12
+        document.getElementById("total_cuota").innerHTML = cuotaTotal.toLocaleString("es-ES")
         seekeyboard()
     }
 
@@ -669,8 +697,11 @@ arrayKeyboard.forEach((Keyboard)=>{
 
     function comprakeyboard(){
         document.getElementById("step10").innerHTML=`${Keyboard.nombre}`;
-        document.getElementById("total").innerHTML= total = total + parseFloat(`${Keyboard.precio}`);
-        document.getElementById("total_cuota").innerHTML = parseFloat( total / 12 ).toFixed(3)
+        total = total + parseFloat(`${Keyboard.precio}`)
+        document.getElementById("total").innerHTML= total.toLocaleString("es-ES");  
+        cuotaTotal = total / 12
+        document.getElementById("total_cuota").innerHTML = cuotaTotal.toLocaleString("es-ES")
+
     }
 
     let comprastepkeyboard = document.getElementById(`${Keyboard.id}`)
@@ -686,3 +717,7 @@ function borrar(){
 amd.addEventListener("click", seeamdproce)
 
 intel.addEventListener("click", seeintelproce)
+
+
+
+
