@@ -1,20 +1,18 @@
 //Objets and Array's
-const Format = (number) => {
-    const exp = /(\d)(?=(\d{3})+(?!\d))/g;
-    const rep = '$1,';
-    return number.toString().replace(exp,rep);
-}
+
+
 //Procesadores AMD 
 
-function ProceAMD (id , nombre , precio , img){
+class ProceAMD {
+    constructor(id , nombre , precio, img){
     this.id = id,
     this.nombre = nombre,
-    this.precio = precio,
+    this.precio = precio.toLocaleString("es-AR"),
     this.img = img
-
+    }
 }
 
-const Ryzen53600 = new ProceAMD ( 1 , "Micro AMD Ryzen 5 3600 4.2Ghz" , 31641 , `ryzen5.jpg`);
+const Ryzen53600 = new ProceAMD ( 1 , "Micro AMD Ryzen 5 3600 4.2Ghz" , 31641, `ryzen5.jpg`);
 const Ryzen55600G = new ProceAMD ( 2 , "Micro AMD Ryzen 5 5600G 4.4Ghz" , 36858 ,`ryzen5.jpg`);
 const Ryzen74750G = new ProceAMD ( 3 , "Micro AMD Ryzen 7 4750G Pro 3.6Ghz AM4" , 50092 ,`ryzen7.jpg`);
 const Ryzen75700X = new ProceAMD ( 4 , "Micro AMD Ryzen 7 5700X 4.6Ghz AM4" , 57577 ,`ryzen7.jpg`);
@@ -30,7 +28,7 @@ let arrayProceAMD = [Ryzen53600,Ryzen55500,Ryzen55600G,Ryzen74750G,Ryzen75700G,R
 function MotherAMD (id, nombre , precio , img){
     this.id = id,
     this.nombre = nombre,
-    this.precio = precio,
+    this.precio = precio.toLocaleString("es-AR"),
     this.img = img
 }
 
@@ -51,7 +49,7 @@ let arrayMotherAMD = [MotherAmdA320M,MotherAmdA520M,MotherAmdB450,MotherAmdB550M
 function ProceIntel (id, nombre, precio , img){
     this.id = id,
     this.nombre = nombre,
-    this.precio = precio,
+    this.precio = precio.toLocaleString("es-AR"),
     this.img = img
 }
 
@@ -73,7 +71,7 @@ let arrayProceIntel = [IntelG5900,IntelG6400,IntelG6900,IntelI310F,IntelI510F,In
 function MotherIntel (id, nombre, precio , img){
     this.id = id,
     this.nombre = nombre,
-    this.precio = precio,
+    this.precio = precio.toLocaleString("es-AR"),
     this.img = img
 }
 
@@ -94,7 +92,7 @@ let arrayMotherIntel = [MIntelB560,MIntelB560M,,MIntelB560MA,MIntelH410M,MIntelH
 function RAMS (id, nombre, precio , img){
     this.id = id,
     this.nombre = nombre,
-    this.precio = precio,
+    this.precio = precio.toLocaleString("es-AR"),
     this.img = img
 }
 
@@ -115,7 +113,7 @@ let arrayRAMS = [RAMBasics,RAMPNYPerformance,RAMXPGD30,RAMXPGD45,RAMCorsairVenge
 function Videocard (id, nombre, precio , img){
     this.id = id,
     this.nombre = nombre,
-    this.precio = precio,
+    this.precio = precio.toLocaleString("es-AR"),
     this.img = img
 }
 
@@ -136,7 +134,7 @@ let arrayVideocard = [GigabyteRX6400,Nvidia1050Ti,RadeonRx6500XT,GigabyteRTX3050
 function Disk (id, nombre, precio , img){
     this.id = id,
     this.nombre = nombre,
-    this.precio = precio,
+    this.precio = precio.toLocaleString("es-AR"),
     this.img = img
 }
 
@@ -158,7 +156,7 @@ let arrayDisk = [GigabyteSSD120GB,MarkVisionSSD240GB,WDSSD1TB,PNYSSD1TB,Kingston
 function Cabinet (id, nombre, precio , img){
     this.id = id,
     this.nombre = nombre,
-    this.precio = precio,
+    this.precio = precio.toLocaleString("es-AR"),
     this.img = img
 }
 
@@ -180,7 +178,7 @@ let arrayCabinet = [XigAQPlus,XigAQII,XigOvertake,Corsair5000D,ThermalLevel20MT,
 function Fountain (id, nombre, precio , img){
     this.id = id,
     this.nombre = nombre,
-    this.precio = precio,
+    this.precio = precio.toLocaleString("es-AR"),
     this.img = img
 }
 
@@ -202,7 +200,7 @@ let arrayFountain = [GigabyteP550B,LinkworldAD2Z550,ThermaltakeSmart,Thermaltake
 function Monitor (id, nombre, precio , img){
     this.id = id,
     this.nombre = nombre,
-    this.precio = precio,
+    this.precio = precio.toLocaleString("es-AR"),
     this.img = img
 }
 
@@ -222,7 +220,7 @@ let arrayMonitor = [SamsungT350H,ViewSonicVX2468,ViewSonicXG2405,GigabyteG27QC,D
 function Mouse (id ,nombre, precio , img){
     this.id = id,
     this.nombre = nombre,
-    this.precio = precio,
+    this.precio = precio.toLocaleString("es-AR"),
     this.img = img
 }
 
@@ -245,7 +243,7 @@ let arrayMouse = [LogiM90,MarvoM207,GenesisKrypton,LogiMiniM187,LogiG203,Redrago
 function Keyboard (id,nombre, precio , img){
     this.id = id,
     this.nombre = nombre,
-    this.precio = precio,
+    this.precio = precio.toLocaleString("es-AR"),
     this.img = img
 
 }
@@ -309,19 +307,22 @@ arrayProceAMD.forEach((ProceAMD)=>{
         </div>
         <div class="card_content">
             <h5>${ProceAMD.nombre}</h5>
-            <p>${ProceAMD.precio}</p>
+            <p>$${ProceAMD.precio}</p>
             <button id="${ProceAMD.id}">Comprar</button>
         </div>
     </div>`
     product.append(amdproce)
     
     function compraamd (){
-    document.getElementById("step1").innerHTML=`${ProceAMD.nombre}`;
-    total = total + parseFloat(`${ProceAMD.precio}`)
-    document.getElementById("total").innerHTML= total.toLocaleString("es-ES");  
-    cuotaTotal = total / 12
-    document.getElementById("total_cuota").innerHTML = cuotaTotal.toLocaleString("es-ES")
-    seeamdmother()
+        document.getElementById("step1").innerHTML=`${ProceAMD.nombre}`;
+        total = total + (parseFloat(`${ProceAMD.precio}`) * 1000);
+        document.getElementById("total").innerHTML= total.toLocaleString("es-AR");
+        cuotaTotal = (total / 12).toLocaleString("es-AR", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+        ProceAMD.push(arrayCarrito);
+    
+        document.getElementById("total_cuota").innerHTML = cuotaTotal
+        seeamdmother();
+        
     }
 
     let comprastepamd = document.getElementById(`${ProceAMD.id}`)
@@ -346,7 +347,7 @@ arrayMotherAMD.forEach((MotherAMD)=>{
         </div>
         <div class="card_content">
             <h5>${MotherAMD.nombre}</h5>
-            <p>${MotherAMD.precio}</p>
+            <p>$${MotherAMD.precio}</p>
             <button id="${MotherAMD.id}">Comprar</button>
         </div>
     </div>`
@@ -354,10 +355,10 @@ arrayMotherAMD.forEach((MotherAMD)=>{
 
     function compramotheramd (){
         document.getElementById("step2").innerHTML=`${MotherAMD.nombre}`;
-        total = total + parseFloat(`${MotherAMD.precio}`)
-        document.getElementById("total").innerHTML= total.toLocaleString("es-ES");  
-        cuotaTotal = total / 12
-        document.getElementById("total_cuota").innerHTML = cuotaTotal.toLocaleString("es-ES")
+        total = total + parseFloat(`${MotherAMD.precio}` * 1000)
+        document.getElementById("total").innerHTML= total.toLocaleString("es-AR");
+        cuotaTotal = (total / 12).toLocaleString("es-AR", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+        document.getElementById("total_cuota").innerHTML = cuotaTotal
         seeram()
         }
     
@@ -382,7 +383,7 @@ arrayProceIntel.forEach((ProceIntel)=>{
             </div>
             <div class="card_content">
                 <h5>${ProceIntel.nombre}</h5>
-                <p>${ProceIntel.precio}</p>
+                <p>$${ProceIntel.precio}</p>
                 <button id="${ProceIntel.id}">Comprar</button>
                 </div>
             </div>`
@@ -390,10 +391,10 @@ arrayProceIntel.forEach((ProceIntel)=>{
 
     function compraintel(){
         document.getElementById("step1").innerHTML=`${ProceIntel.nombre}`;
-        total = total + parseFloat(`${ProceIntel.precio}`)
-        document.getElementById("total").innerHTML= total.toLocaleString("es-ES");  
-        cuotaTotal = total / 12
-        document.getElementById("total_cuota").innerHTML = cuotaTotal.toLocaleString("es-ES")
+        total = total + parseFloat(`${ProceIntel.precio}` * 1000)
+        document.getElementById("total").innerHTML= total.toLocaleString("es-AR");
+        cuotaTotal = (total / 12).toLocaleString("es-AR", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+        document.getElementById("total_cuota").innerHTML = cuotaTotal
         seeintelmother()
     }
 
@@ -416,7 +417,7 @@ arrayMotherIntel.forEach((MotherIntel)=>{
         </div>
         <div class="card_content">
             <h5>${MotherIntel.nombre}</h5>
-            <p>${MotherIntel.precio}</p>
+            <p>$${MotherIntel.precio}</p>
             <button id="${MotherIntel.id}">Comprar</button>
         </div>
     </div>`
@@ -424,10 +425,10 @@ arrayMotherIntel.forEach((MotherIntel)=>{
 
     function compramotherintel(){
         document.getElementById("step2").innerHTML=`${MotherIntel.nombre}`;
-        total = total + parseFloat(`${MotherIntel.precio}`)
-        document.getElementById("total").innerHTML= total.toLocaleString("es-ES");  
-        cuotaTotal = total / 12
-        document.getElementById("total_cuota").innerHTML = cuotaTotal.toLocaleString("es-ES")
+        total = total + parseFloat(`${MotherIntel.precio}` * 1000)
+        document.getElementById("total").innerHTML= total.toLocaleString("es-AR");
+        cuotaTotal = (total / 12).toLocaleString("es-AR", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+        document.getElementById("total_cuota").innerHTML = cuotaTotal
         seeram()
     }
 
@@ -450,7 +451,7 @@ arrayRAMS.forEach((RAM)=>{
         </div>
         <div class="card_content">
             <h5>${RAM.nombre}</h5>
-            <p>${RAM.precio}</p>
+            <p>$${RAM.precio}</p>
             <button id="${RAM.id}">Comprar</button>
         </div>
     </div>`
@@ -458,10 +459,10 @@ arrayRAMS.forEach((RAM)=>{
 
     function compraram(){
         document.getElementById("step3").innerHTML=`${RAM.nombre}`;
-        total = total + parseFloat(`${RAM.precio}`)
-        document.getElementById("total").innerHTML= total.toLocaleString("es-ES");  
-        cuotaTotal = total / 12
-        document.getElementById("total_cuota").innerHTML = cuotaTotal.toLocaleString("es-ES")
+        total = total + parseFloat(`${RAM.precio}` * 1000)
+        document.getElementById("total").innerHTML= total.toLocaleString("es-AR");
+        cuotaTotal = (total / 12).toLocaleString("es-AR", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+        document.getElementById("total_cuota").innerHTML = cuotaTotal
         seevideocard()
     }
 
@@ -484,7 +485,7 @@ arrayVideocard.forEach((Videocard)=>{
         </div>
         <div class="card_content">
             <h5>${Videocard.nombre}</h5>
-            <p>${Videocard.precio}</p>
+            <p>$${Videocard.precio}</p>
             <button id="${Videocard.id}">Comprar</button>
         </div>
     </div>`
@@ -492,10 +493,10 @@ arrayVideocard.forEach((Videocard)=>{
 
     function compravideocard(){
         document.getElementById("step4").innerHTML=`${Videocard.nombre}`;
-        total = total + parseFloat(`${Videocard.precio}`)
-        document.getElementById("total").innerHTML= total.toLocaleString("es-ES");  
-        cuotaTotal = total / 12
-        document.getElementById("total_cuota").innerHTML = cuotaTotal.toLocaleString("es-ES")
+        total = total + parseFloat(`${Videocard.precio}` * 1000)
+        document.getElementById("total").innerHTML= total.toLocaleString("es-AR");
+        cuotaTotal = (total / 12).toLocaleString("es-AR", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+        document.getElementById("total_cuota").innerHTML = cuotaTotal
         seedisk()
     }
 
@@ -518,7 +519,7 @@ arrayDisk.forEach((Disk)=>{
         </div>
         <div class="card_content">
             <h5>${Disk.nombre}</h5>
-            <p>${Disk.precio}</p>
+            <p>$${Disk.precio}</p>
             <button id="${Disk.id}">Comprar</button>
         </div>
     </div>`
@@ -526,10 +527,10 @@ arrayDisk.forEach((Disk)=>{
 
     function compradisk(){
         document.getElementById("step5").innerHTML=`${Disk.nombre}`;
-        total = total + parseFloat(`${Disk.precio}`)
-        document.getElementById("total").innerHTML= total.toLocaleString("es-ES");  
-        cuotaTotal = total / 12
-        document.getElementById("total_cuota").innerHTML = cuotaTotal.toLocaleString("es-ES")
+        total = total + parseFloat(`${Disk.precio}` * 1000)
+        document.getElementById("total").innerHTML= total.toLocaleString("es-AR");
+        cuotaTotal = (total / 12).toLocaleString("es-AR", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+        document.getElementById("total_cuota").innerHTML = cuotaTotal
         seecabinet()
     }
 
@@ -553,7 +554,7 @@ arrayCabinet.forEach((Cabinet)=>{
         </div>
         <div class="card_content">
             <h5>${Cabinet.nombre}</h5>
-            <p>${Cabinet.precio}</p>
+            <p>$${Cabinet.precio}</p>
             <button id="${Cabinet.id}">Comprar</button>
         </div>
     </div>`
@@ -561,10 +562,10 @@ arrayCabinet.forEach((Cabinet)=>{
 
     function compracabinet(){
         document.getElementById("step6").innerHTML=`${Cabinet.nombre}`;
-        total = total + parseFloat(`${Cabinet.precio}`)
-        document.getElementById("total").innerHTML= total.toLocaleString("es-ES");  
-        cuotaTotal = total / 12
-        document.getElementById("total_cuota").innerHTML = cuotaTotal.toLocaleString("es-ES")
+        total = total + parseFloat(`${Cabinet.precio}` * 1000)
+        document.getElementById("total").innerHTML= total.toLocaleString("es-AR");
+        cuotaTotal = (total / 12).toLocaleString("es-AR", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+        document.getElementById("total_cuota").innerHTML = cuotaTotal
         seefountain()
     }
 
@@ -587,7 +588,7 @@ arrayFountain.forEach((Fountain)=>{
         </div>
         <div class="card_content">
             <h5>${Fountain.nombre}</h5>
-            <p>${Fountain.precio}</p>
+            <p>$${Fountain.precio}</p>
             <button id="${Fountain.id}">Comprar</button>
         </div>
     </div>`
@@ -595,10 +596,10 @@ arrayFountain.forEach((Fountain)=>{
 
     function comprafountain(){
         document.getElementById("step7").innerHTML=`${Fountain.nombre}`;
-        total = total + parseFloat(`${Fountain.precio}`)
-        document.getElementById("total").innerHTML= total.toLocaleString("es-ES");  
-        cuotaTotal = total / 12
-        document.getElementById("total_cuota").innerHTML = cuotaTotal.toLocaleString("es-ES")
+        total = total + parseFloat(`${Fountain.precio}` * 1000)
+        document.getElementById("total").innerHTML= total.toLocaleString("es-AR");
+        cuotaTotal = (total / 12).toLocaleString("es-AR", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+        document.getElementById("total_cuota").innerHTML = cuotaTotal
         seemonitor()
     }
 
@@ -621,7 +622,7 @@ arrayMonitor.forEach((Monitor)=>{
         </div>
         <div class="card_content">
             <h5>${Monitor.nombre}</h5>
-            <p>${Monitor.precio}</p>
+            <p>$${Monitor.precio}</p>
             <button id="${Monitor.id}">Comprar</button>
         </div>
     </div>`
@@ -629,10 +630,10 @@ arrayMonitor.forEach((Monitor)=>{
 
     function compramonitor(){
         document.getElementById("step8").innerHTML=`${Monitor.nombre}`;
-        total = total + parseFloat(`${Monitor.precio}`)
-        document.getElementById("total").innerHTML= total.toLocaleString("es-ES");  
-        cuotaTotal = total / 12
-        document.getElementById("total_cuota").innerHTML = cuotaTotal.toLocaleString("es-ES")
+        total = total + parseFloat(`${Monitor.precio}` * 1000)
+        document.getElementById("total").innerHTML= total.toLocaleString("es-AR");
+        cuotaTotal = (total / 12).toLocaleString("es-AR", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+        document.getElementById("total_cuota").innerHTML = cuotaTotal
         seemouse()
     }
 
@@ -655,7 +656,7 @@ arrayMouse.forEach((Mouse)=>{
         </div>
         <div class="card_content">
             <h5>${Mouse.nombre}</h5>
-            <p>${Mouse.precio}</p>
+            <p>$${Mouse.precio}</p>
             <button id="${Mouse.id}">Comprar</button>
         </div>
     </div>`
@@ -663,10 +664,10 @@ arrayMouse.forEach((Mouse)=>{
 
     function compramouse(){
         document.getElementById("step9").innerHTML=`${Mouse.nombre}`;
-        total = total + parseFloat(`${Mouse.precio}`)
-        document.getElementById("total").innerHTML= total.toLocaleString("es-ES");  
-        cuotaTotal = total / 12
-        document.getElementById("total_cuota").innerHTML = cuotaTotal.toLocaleString("es-ES")
+        total = total + parseFloat(`${Mouse.precio}` * 1000)
+        document.getElementById("total").innerHTML= total.toLocaleString("es-AR");
+        cuotaTotal = (total / 12).toLocaleString("es-AR", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+        document.getElementById("total_cuota").innerHTML = cuotaTotal
         seekeyboard()
     }
 
@@ -689,7 +690,7 @@ arrayKeyboard.forEach((Keyboard)=>{
         </div>
         <div class="card_content">
             <h5>${Keyboard.nombre}</h5>
-            <p>${Keyboard.precio}</p>
+            <p>$${Keyboard.precio}</p>
             <button id="${Keyboard.id}">Comprar</button>
         </div>
     </div>`
@@ -697,10 +698,10 @@ arrayKeyboard.forEach((Keyboard)=>{
 
     function comprakeyboard(){
         document.getElementById("step10").innerHTML=`${Keyboard.nombre}`;
-        total = total + parseFloat(`${Keyboard.precio}`)
-        document.getElementById("total").innerHTML= total.toLocaleString("es-ES");  
-        cuotaTotal = total / 12
-        document.getElementById("total_cuota").innerHTML = cuotaTotal.toLocaleString("es-ES")
+        total = total + parseFloat(`${Keyboard.precio}` * 1000)
+        document.getElementById("total").innerHTML= total.toLocaleString("es-AR");
+        cuotaTotal = (total / 12).toLocaleString("es-AR", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+        document.getElementById("total_cuota").innerHTML = cuotaTotal
 
     }
 
@@ -719,5 +720,12 @@ amd.addEventListener("click", seeamdproce)
 intel.addEventListener("click", seeintelproce)
 
 
+//Sesion Storage
 
+let arrayCarrito = JSON.stringify([LogiG203,LogiG305,XigAQII,XigAQPlus,ViewSonicVX2468])
 
+let Carrito = sessionStorage.setItem("Carrito", arrayCarrito)
+
+let carrito = JSON.parse(sessionStorage.getItem("Carrito"))
+
+console.log(carrito)
