@@ -308,7 +308,7 @@ arrayProceAMD.forEach((ProceAMD)=>{
         <div class="card_content">
             <h5>${ProceAMD.nombre}</h5>
             <p>$${ProceAMD.precio}</p>
-            <button id="${ProceAMD.id}">Comprar</button>
+            <button class="btn_product" id="${ProceAMD.id}">Comprar</button>
         </div>
     </div>`
     product.append(amdproce)
@@ -318,20 +318,37 @@ arrayProceAMD.forEach((ProceAMD)=>{
         total = total + (parseFloat(`${ProceAMD.precio}`) * 1000);
         document.getElementById("total").innerHTML= total.toLocaleString("es-AR");
         cuotaTotal = (total / 12).toLocaleString("es-AR", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
-        ProceAMD.push(arrayCarrito);
-    
         document.getElementById("total_cuota").innerHTML = cuotaTotal
+        const Toast = Swal.mixin({
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 2000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+                toast.addEventListener('mouseenter', Swal.stopTimer)
+                toast.addEventListener('mouseleave', Swal.resumeTimer)
+                }
+            })
+            Toast.fire({
+            icon: 'success',
+            title: 'Producto agregado al carrito'
+            })
         seeamdmother();
-        
     }
 
     let comprastepamd = document.getElementById(`${ProceAMD.id}`)
 
-    comprastepamd.addEventListener("click", compraamd)
+    comprastepamd.addEventListener("click", compraamd,  ()=>{
+        ProceAMD.push(arrayCarrito)
+
+        
+    })
+
+
 
 })
 }
-
 
 
 function seeamdmother(){
@@ -348,7 +365,7 @@ arrayMotherAMD.forEach((MotherAMD)=>{
         <div class="card_content">
             <h5>${MotherAMD.nombre}</h5>
             <p>$${MotherAMD.precio}</p>
-            <button id="${MotherAMD.id}">Comprar</button>
+            <button class="btn_product" id="${MotherAMD.id}">Comprar</button>
         </div>
     </div>`
     product.append(amdmother)
@@ -359,6 +376,21 @@ arrayMotherAMD.forEach((MotherAMD)=>{
         document.getElementById("total").innerHTML= total.toLocaleString("es-AR");
         cuotaTotal = (total / 12).toLocaleString("es-AR", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
         document.getElementById("total_cuota").innerHTML = cuotaTotal
+        const Toast = Swal.mixin({
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 2000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+                toast.addEventListener('mouseenter', Swal.stopTimer)
+                toast.addEventListener('mouseleave', Swal.resumeTimer)
+                }
+            })
+            Toast.fire({
+            icon: 'success',
+            title: 'Producto agregado al carrito'
+            })
         seeram()
         }
     
@@ -384,7 +416,7 @@ arrayProceIntel.forEach((ProceIntel)=>{
             <div class="card_content">
                 <h5>${ProceIntel.nombre}</h5>
                 <p>$${ProceIntel.precio}</p>
-                <button id="${ProceIntel.id}">Comprar</button>
+                <button class="btn_product" id="${ProceIntel.id}">Comprar</button>
                 </div>
             </div>`
     product.append(intelproce)
@@ -395,6 +427,21 @@ arrayProceIntel.forEach((ProceIntel)=>{
         document.getElementById("total").innerHTML= total.toLocaleString("es-AR");
         cuotaTotal = (total / 12).toLocaleString("es-AR", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
         document.getElementById("total_cuota").innerHTML = cuotaTotal
+        const Toast = Swal.mixin({
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 2000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+                toast.addEventListener('mouseenter', Swal.stopTimer)
+                toast.addEventListener('mouseleave', Swal.resumeTimer)
+                }
+            })
+            Toast.fire({
+            icon: 'success',
+            title: 'Producto agregado al carrito'
+            })
         seeintelmother()
     }
 
@@ -418,7 +465,7 @@ arrayMotherIntel.forEach((MotherIntel)=>{
         <div class="card_content">
             <h5>${MotherIntel.nombre}</h5>
             <p>$${MotherIntel.precio}</p>
-            <button id="${MotherIntel.id}">Comprar</button>
+            <button class="btn_product" id="${MotherIntel.id}">Comprar</button>
         </div>
     </div>`
     product.append(intelmother)
@@ -429,6 +476,21 @@ arrayMotherIntel.forEach((MotherIntel)=>{
         document.getElementById("total").innerHTML= total.toLocaleString("es-AR");
         cuotaTotal = (total / 12).toLocaleString("es-AR", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
         document.getElementById("total_cuota").innerHTML = cuotaTotal
+        const Toast = Swal.mixin({
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 2000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+                toast.addEventListener('mouseenter', Swal.stopTimer)
+                toast.addEventListener('mouseleave', Swal.resumeTimer)
+                }
+            })
+            Toast.fire({
+            icon: 'success',
+            title: 'Producto agregado al carrito'
+            })
         seeram()
     }
 
@@ -452,7 +514,7 @@ arrayRAMS.forEach((RAM)=>{
         <div class="card_content">
             <h5>${RAM.nombre}</h5>
             <p>$${RAM.precio}</p>
-            <button id="${RAM.id}">Comprar</button>
+            <button class="btn_product" id="${RAM.id}">Comprar</button>
         </div>
     </div>`
     product.append(ram)
@@ -463,6 +525,21 @@ arrayRAMS.forEach((RAM)=>{
         document.getElementById("total").innerHTML= total.toLocaleString("es-AR");
         cuotaTotal = (total / 12).toLocaleString("es-AR", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
         document.getElementById("total_cuota").innerHTML = cuotaTotal
+        const Toast = Swal.mixin({
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 2000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+                toast.addEventListener('mouseenter', Swal.stopTimer)
+                toast.addEventListener('mouseleave', Swal.resumeTimer)
+                }
+            })
+            Toast.fire({
+            icon: 'success',
+            title: 'Producto agregado al carrito'
+            })
         seevideocard()
     }
 
@@ -486,7 +563,7 @@ arrayVideocard.forEach((Videocard)=>{
         <div class="card_content">
             <h5>${Videocard.nombre}</h5>
             <p>$${Videocard.precio}</p>
-            <button id="${Videocard.id}">Comprar</button>
+            <button class="btn_product" id="${Videocard.id}">Comprar</button>
         </div>
     </div>`
     product.append(videocard)
@@ -497,6 +574,21 @@ arrayVideocard.forEach((Videocard)=>{
         document.getElementById("total").innerHTML= total.toLocaleString("es-AR");
         cuotaTotal = (total / 12).toLocaleString("es-AR", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
         document.getElementById("total_cuota").innerHTML = cuotaTotal
+        const Toast = Swal.mixin({
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 2000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+                toast.addEventListener('mouseenter', Swal.stopTimer)
+                toast.addEventListener('mouseleave', Swal.resumeTimer)
+                }
+            })
+            Toast.fire({
+            icon: 'success',
+            title: 'Producto agregado al carrito'
+            })
         seedisk()
     }
 
@@ -520,7 +612,7 @@ arrayDisk.forEach((Disk)=>{
         <div class="card_content">
             <h5>${Disk.nombre}</h5>
             <p>$${Disk.precio}</p>
-            <button id="${Disk.id}">Comprar</button>
+            <button class="btn_product" id="${Disk.id}">Comprar</button>
         </div>
     </div>`
     product.append(disk)
@@ -531,6 +623,21 @@ arrayDisk.forEach((Disk)=>{
         document.getElementById("total").innerHTML= total.toLocaleString("es-AR");
         cuotaTotal = (total / 12).toLocaleString("es-AR", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
         document.getElementById("total_cuota").innerHTML = cuotaTotal
+        const Toast = Swal.mixin({
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 2000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+                toast.addEventListener('mouseenter', Swal.stopTimer)
+                toast.addEventListener('mouseleave', Swal.resumeTimer)
+                }
+            })
+            Toast.fire({
+            icon: 'success',
+            title: 'Producto agregado al carrito'
+            })
         seecabinet()
     }
 
@@ -555,7 +662,7 @@ arrayCabinet.forEach((Cabinet)=>{
         <div class="card_content">
             <h5>${Cabinet.nombre}</h5>
             <p>$${Cabinet.precio}</p>
-            <button id="${Cabinet.id}">Comprar</button>
+            <button class="btn_product" id="${Cabinet.id}">Comprar</button>
         </div>
     </div>`
     product.append(cabinet)
@@ -566,6 +673,21 @@ arrayCabinet.forEach((Cabinet)=>{
         document.getElementById("total").innerHTML= total.toLocaleString("es-AR");
         cuotaTotal = (total / 12).toLocaleString("es-AR", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
         document.getElementById("total_cuota").innerHTML = cuotaTotal
+        const Toast = Swal.mixin({
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 2000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+                toast.addEventListener('mouseenter', Swal.stopTimer)
+                toast.addEventListener('mouseleave', Swal.resumeTimer)
+                }
+            })
+            Toast.fire({
+            icon: 'success',
+            title: 'Producto agregado al carrito'
+            })
         seefountain()
     }
 
@@ -589,7 +711,7 @@ arrayFountain.forEach((Fountain)=>{
         <div class="card_content">
             <h5>${Fountain.nombre}</h5>
             <p>$${Fountain.precio}</p>
-            <button id="${Fountain.id}">Comprar</button>
+            <button class="btn_product" id="${Fountain.id}">Comprar</button>
         </div>
     </div>`
     product.append(fountain)
@@ -600,6 +722,21 @@ arrayFountain.forEach((Fountain)=>{
         document.getElementById("total").innerHTML= total.toLocaleString("es-AR");
         cuotaTotal = (total / 12).toLocaleString("es-AR", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
         document.getElementById("total_cuota").innerHTML = cuotaTotal
+        const Toast = Swal.mixin({
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 2000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+                toast.addEventListener('mouseenter', Swal.stopTimer)
+                toast.addEventListener('mouseleave', Swal.resumeTimer)
+                }
+            })
+            Toast.fire({
+            icon: 'success',
+            title: 'Producto agregado al carrito'
+            })
         seemonitor()
     }
 
@@ -623,7 +760,7 @@ arrayMonitor.forEach((Monitor)=>{
         <div class="card_content">
             <h5>${Monitor.nombre}</h5>
             <p>$${Monitor.precio}</p>
-            <button id="${Monitor.id}">Comprar</button>
+            <button class="btn_product" id="${Monitor.id}">Comprar</button>
         </div>
     </div>`
     product.append(monitor)
@@ -634,6 +771,21 @@ arrayMonitor.forEach((Monitor)=>{
         document.getElementById("total").innerHTML= total.toLocaleString("es-AR");
         cuotaTotal = (total / 12).toLocaleString("es-AR", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
         document.getElementById("total_cuota").innerHTML = cuotaTotal
+        const Toast = Swal.mixin({
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 2000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+                toast.addEventListener('mouseenter', Swal.stopTimer)
+                toast.addEventListener('mouseleave', Swal.resumeTimer)
+                }
+            })
+            Toast.fire({
+            icon: 'success',
+            title: 'Producto agregado al carrito'
+            })
         seemouse()
     }
 
@@ -657,7 +809,7 @@ arrayMouse.forEach((Mouse)=>{
         <div class="card_content">
             <h5>${Mouse.nombre}</h5>
             <p>$${Mouse.precio}</p>
-            <button id="${Mouse.id}">Comprar</button>
+            <button class="btn_product" id="${Mouse.id}">Comprar</button>
         </div>
     </div>`
     product.append(mouse)
@@ -668,6 +820,21 @@ arrayMouse.forEach((Mouse)=>{
         document.getElementById("total").innerHTML= total.toLocaleString("es-AR");
         cuotaTotal = (total / 12).toLocaleString("es-AR", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
         document.getElementById("total_cuota").innerHTML = cuotaTotal
+        const Toast = Swal.mixin({
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 2000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+                toast.addEventListener('mouseenter', Swal.stopTimer)
+                toast.addEventListener('mouseleave', Swal.resumeTimer)
+                }
+            })
+            Toast.fire({
+            icon: 'success',
+            title: 'Producto agregado al carrito'
+            })
         seekeyboard()
     }
 
@@ -691,7 +858,7 @@ arrayKeyboard.forEach((Keyboard)=>{
         <div class="card_content">
             <h5>${Keyboard.nombre}</h5>
             <p>$${Keyboard.precio}</p>
-            <button id="${Keyboard.id}">Comprar</button>
+            <button class="btn_product" id="${Keyboard.id}">Comprar</button>
         </div>
     </div>`
     product.append(keyboard)
@@ -702,6 +869,21 @@ arrayKeyboard.forEach((Keyboard)=>{
         document.getElementById("total").innerHTML= total.toLocaleString("es-AR");
         cuotaTotal = (total / 12).toLocaleString("es-AR", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
         document.getElementById("total_cuota").innerHTML = cuotaTotal
+        const Toast = Swal.mixin({
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 2000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+                toast.addEventListener('mouseenter', Swal.stopTimer)
+                toast.addEventListener('mouseleave', Swal.resumeTimer)
+                }
+            })
+            Toast.fire({
+            icon: 'success',
+            title: 'Producto agregado al carrito'
+            })
 
     }
 
@@ -722,10 +904,8 @@ intel.addEventListener("click", seeintelproce)
 
 //Sesion Storage
 
-let arrayCarrito = JSON.stringify([LogiG203,LogiG305,XigAQII,XigAQPlus,ViewSonicVX2468])
+let arrayCarrito = []
 
-let Carrito = sessionStorage.setItem("Carrito", arrayCarrito)
 
-let carrito = JSON.parse(sessionStorage.getItem("Carrito"))
 
-console.log(carrito)
+console.log(arrayCarrito)
