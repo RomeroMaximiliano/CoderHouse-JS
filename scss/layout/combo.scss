@@ -8,7 +8,13 @@ body{
     background-color: $main;
 }
 
+#cuerpo{
+    display: block;
+}
+
 .main_product{
+    display: flex;
+    flex-direction: column;
     border: 2px solid black;
     border-radius: 5px;
     margin: 50px 20px;
